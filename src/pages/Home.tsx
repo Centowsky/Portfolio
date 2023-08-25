@@ -1,7 +1,9 @@
-import React from "react";
+import "../styles/Home.scss";
 
-type Props = {};
-
-export default function Home({}: Props) {
-  return <div>Home</div>;
+export default function Home() {
+  return (
+    <div className="home h-screen flex flex-col justify-center items-center">
+      <h1>HomePage</h1>
+    </div>
+  );
 }
