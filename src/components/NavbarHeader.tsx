@@ -18,13 +18,16 @@ export function NavbarHeader() {
     );
   }, []);
 
+  const linkStyle =
+    "p-1 font-light border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500";
+
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
+    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-light border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500"
+        className={linkStyle}
       >
         <Link to="/" className="flex items-center">
           Strona główna
@@ -34,7 +37,7 @@ export function NavbarHeader() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-light border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500"
+        className={linkStyle}
       >
         <Link to="/about" className="flex items-center">
           O mnie
@@ -44,7 +47,7 @@ export function NavbarHeader() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-light border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500"
+        className={linkStyle}
       >
         <Link to="/projects" className="flex items-center">
           Projekty
@@ -54,7 +57,7 @@ export function NavbarHeader() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-light border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500"
+        className={linkStyle}
       >
         <Link to="/contact" className="flex items-center">
           Kontakt
@@ -64,14 +67,14 @@ export function NavbarHeader() {
   );
 
   return (
-    <Navbar className="mx-auto max-w-full py-1 px-4 lg:px-8 lg:py-3 bg-gray-400 rounded-b-lg text-zinc-700  fixed top-0 w-screen select-none">
+    <Navbar className="mx-auto max-w-full py-2 px-4 lg:px-8 lg:py-3 bg-gray-400 rounded-b-lg text-zinc-700 fixed top-0 w-screen select-none ">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <div className="flex items-center transition hover:scale-110">
           <img src={logo} alt="Logo" className="h-8 w-8 mr-2" />
           <Typography
             as="a"
             href="#"
-            className="mr-4 cursor-pointer py-1.5 font-light border-transparent border-b-2 "
+            className={`mr-4 cursor-pointer py-1.5 font-light border-transparent border-b-2 ${linkStyle}`}
           >
             Centowsky
           </Typography>
@@ -115,8 +118,8 @@ export function NavbarHeader() {
           )}
         </IconButton>
       </div>
-      <MobileNav open={openNav}>
-        <div className="container mx-auto">{navList}</div>
+      <MobileNav open={openNav} className="text-center ">
+        <div className="container mx-auto px-3">{navList}</div>
       </MobileNav>
     </Navbar>
   );
