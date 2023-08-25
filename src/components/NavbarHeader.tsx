@@ -24,7 +24,7 @@ export function NavbarHeader() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium transition hover:text-blue-900 hover:underline hover:scale-110"
+        className="p-1 font-light border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500"
       >
         <Link to="/" className="flex items-center">
           Strona główna
@@ -34,7 +34,7 @@ export function NavbarHeader() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1 font-light border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500"
       >
         <Link to="/about" className="flex items-center">
           O mnie
@@ -44,7 +44,7 @@ export function NavbarHeader() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1 font-light border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500"
       >
         <Link to="/projects" className="flex items-center">
           Projekty
@@ -54,7 +54,7 @@ export function NavbarHeader() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-normal"
+        className="p-1 font-light border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500"
       >
         <Link to="/contact" className="flex items-center">
           Kontakt
@@ -64,14 +64,14 @@ export function NavbarHeader() {
   );
 
   return (
-    <Navbar className="mx-auto max-w-full py-1 px-4 lg:px-8 lg:py-3 bg-slate-400 rounded-b-lg text-white fixed top-0 w-screen">
+    <Navbar className="mx-auto max-w-full py-1 px-4 lg:px-8 lg:py-3 bg-gray-400 rounded-b-lg text-zinc-700  fixed top-0 w-screen select-none">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <div className="flex items-center">
+        <div className="flex items-center transition hover:scale-110">
           <img src={logo} alt="Logo" className="h-8 w-8 mr-2" />
           <Typography
             as="a"
             href="#"
-            className="mr-4 cursor-pointer py-1.5 font-medium"
+            className="mr-4 cursor-pointer py-1.5 font-light border-transparent border-b-2 "
           >
             Centowsky
           </Typography>
