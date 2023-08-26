@@ -10,7 +10,7 @@ export default function Home() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor
           libero eget lectus sollicitudin, non bibendum libero facilisis.
         </p>
-        <button className="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 ">
+        <button className="mt-4 bg-amber-500 text-white py-2 px-4 rounded transition duration-1000 hover:bg-amber-600 ">
           Więcej informacji
         </button>
       </div>

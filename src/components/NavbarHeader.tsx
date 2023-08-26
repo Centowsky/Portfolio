@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+
+interface MenuItem {
+  text: string;
+  link: string;
+}
 
 export default function NavbarHeader() {
   const [navbar, setNavbar] = useState(false);
 
-  const logoText = "CENTOWSKY"; // Tekst logo
-  const menuItems = [
-    // Elementy menu
+  const logoText: string = "CENTOWSKY";
+  const menuItems: MenuItem[] = [
     { text: "Strona główna", link: "/" },
     { text: "O mnie", link: "/about" },
     { text: "Projekty", link: "/projects" },
@@ -18,7 +22,7 @@ export default function NavbarHeader() {
     setNavbar(!navbar);
   };
 
-  const gradientColor = navbar
+  const gradientColor: string = navbar
     ? "from-gray-800 to-gray-900"
     : "from-indigo-700 to-gray-900";
 
@@ -86,7 +90,7 @@ export default function NavbarHeader() {
               {menuItems.map((item, index) => (
                 <li
                   key={index}
-                  className="text-white p-1 border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500"
+                  className="text-white p-1 border-transparent border-b-2 transition duration-500 hover:border-gray-500"
                 >
                   <Link to={item.link}>{item.text}</Link>
                 </li>
