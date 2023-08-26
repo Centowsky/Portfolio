@@ -1,126 +1,100 @@
-import {
-  IconButton,
-  MobileNav,
-  Navbar,
-  Typography,
-} from "@material-tailwind/react";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
-export function NavbarHeader() {
-  const [openNav, setOpenNav] = React.useState(false);
+export default function NavbarHeader() {
+  const [navbar, setNavbar] = useState(false);
 
-  React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
-  }, []);
+  const logoText = "CENTOWSKY"; // Tekst logo
+  const menuItems = [
+    // Elementy menu
+    { text: "Strona główna", link: "/" },
+    { text: "O mnie", link: "/about" },
+    { text: "Projekty", link: "/projects" },
+    { text: "Kontakt", link: "/contact" },
+  ];
 
-  const linkStyle =
-    "p-1 font-light border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500";
+  const toggleNavbar = () => {
+    setNavbar(!navbar);
+  };
 
-  const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className={linkStyle}
-      >
-        <Link to="/" className="flex items-center">
-          Strona główna
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className={linkStyle}
-      >
-        <Link to="/about" className="flex items-center">
-          O mnie
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className={linkStyle}
-      >
-        <Link to="/projects" className="flex items-center">
-          Projekty
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className={linkStyle}
-      >
-        <Link to="/contact" className="flex items-center">
-          Kontakt
-        </Link>
-      </Typography>
-    </ul>
-  );
+  const gradientColor = navbar
+    ? "from-gray-800 to-gray-900"
+    : "from-indigo-700 to-gray-900";
 
   return (
-    <Navbar className="mx-auto max-w-full py-2 px-4 lg:px-8 lg:py-3 bg-gray-400 rounded-b-lg text-zinc-700 fixed top-0 w-screen select-none ">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <div className="flex items-center transition hover:scale-110">
-          <img src={logo} alt="Logo" className="h-8 w-8 mr-2" />
-          <Typography
-            as="a"
-            href="#"
-            className={`mr-4 cursor-pointer py-1.5 font-light border-transparent border-b-2 ${linkStyle}`}
-          >
-            Centowsky
-          </Typography>
+    <nav
+      className={`mx-auto max-w-full py-2 px-4 bg-gradient-to-b ${gradientColor} text-white rounded-b-lg fixed top-0 w-screen select-none z-10 ${
+        navbar ? "shadow-lg" : ""
+      }`}
+    >
+      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+        <div>
+          <div className="flex items-center justify-between md:py-2 md:block">
+            <Link
+              to="/"
+              className="flex items-center p-1 border-transparent border-b-2 transition hover:scale-110"
+            >
+              <img src={logo} alt="Logo" className="h-8 w-8 mr-2" />
+              <span className="text-2xl font-bold text-white">{logoText}</span>
+            </Link>
+            <div className="md:hidden">
+              <button
+                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                onClick={toggleNavbar}
+              >
+                {navbar ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6 text-white"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="hidden lg:block">{navList}</div>
-        <IconButton
-          variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-          ripple={false}
-          onClick={() => setOpenNav(!openNav)}
-        >
-          {openNav ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              className="h-6 w-6"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </IconButton>
+        <div>
+          <div
+            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+              navbar ? "block" : "hidden"
+            }`}
+          >
+            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 ">
+              {menuItems.map((item, index) => (
+                <li
+                  key={index}
+                  className="text-white p-1 border-transparent border-b-2 transition hover:scale-110 hover:border-gray-500"
+                >
+                  <Link to={item.link}>{item.text}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-      <MobileNav open={openNav} className="text-center ">
-        <div className="container mx-auto px-3">{navList}</div>
-      </MobileNav>
-    </Navbar>
+    </nav>
   );
 }
