@@ -3,7 +3,7 @@ import "../styles/Home.scss";
 
 export default function Home() {
   return (
-    <section className="bg-gradient-to-b from-indigo-600 to-gray-800 h-screen flex flex-col justify-center items-center relative text-white z-0">
+    <section className="bg-gray-600 h-screen flex flex-col justify-center items-center relative text-white z-0">
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4">Frontend Developer</h1>
         <p className="text-lg">
