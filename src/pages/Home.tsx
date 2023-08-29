@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Home.scss";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <section className="bg-gray-600 h-screen flex flex-col justify-center items-center relative text-white z-0">
       <div className="max-w-3xl mx-auto text-center">

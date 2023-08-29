@@ -15,7 +15,7 @@ export default function NavbarHeader() {
     { text: "Strona główna", link: "/" },
     { text: "O mnie", link: "/about" },
     { text: "Projekty", link: "/projects" },
-    { text: "Kontakt", link: "#form-contact" },
+    { text: "Kontakt", link: "#contact" },
   ];
 
   const toggleNavbar = () => {
@@ -23,7 +23,7 @@ export default function NavbarHeader() {
   };
 
   const handleContactClick = () => {
-    const formContact = document.getElementById("form-contact");
+    const formContact = document.getElementById("contact");
     if (formContact) {
       formContact.scrollIntoView({ behavior: "smooth" });
     }
@@ -95,8 +95,8 @@ export default function NavbarHeader() {
                   key={index}
                   className="text-white p-1 border-transparent border-b-2 transition duration-500 hover:border-gray-500"
                 >
-                  {item.link === "#form-contact" ? (
-                    <a href="#form-contact" onClick={handleContactClick}>
+                  {item.link === "#contact" ? (
+                    <a href="#contact" onClick={handleContactClick}>
                       {item.text}
                     </a>
                   ) : (
