@@ -15,16 +15,19 @@ export default function NavbarHeader() {
     { text: "Strona główna", link: "/" },
     { text: "O mnie", link: "/about" },
     { text: "Projekty", link: "/projects" },
-    { text: "Kontakt", link: "/contact" },
+    { text: "Kontakt", link: "#form-contact" },
   ];
 
   const toggleNavbar = () => {
     setNavbar(!navbar);
   };
 
-  const gradientColor: string = navbar
-    ? "from-gray-800 to-gray-900"
-    : "from-indigo-700 to-gray-900";
+  const handleContactClick = () => {
+    const formContact = document.getElementById("form-contact");
+    if (formContact) {
+      formContact.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav
@@ -92,7 +95,13 @@ export default function NavbarHeader() {
                   key={index}
                   className="text-white p-1 border-transparent border-b-2 transition duration-500 hover:border-gray-500"
                 >
-                  <Link to={item.link}>{item.text}</Link>
+                  {item.link === "#form-contact" ? (
+                    <a href="#form-contact" onClick={handleContactClick}>
+                      {item.text}
+                    </a>
+                  ) : (
+                    <Link to={item.link}>{item.text}</Link>
+                  )}
                 </li>
               ))}
             </ul>

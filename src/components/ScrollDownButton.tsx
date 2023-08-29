@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/ScrollDownButton.scss";
 
 function ScrollDownButton() {
@@ -19,11 +19,11 @@ function ScrollDownButton() {
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="w-6 h-6 text-white arrow-icon" // Zaktualizowana klasa
-        viewBox="0 0 24 24" // Aktualizacja widoku
-        fill="none" // Brak wypełnienia
-        stroke="currentColor" // Kolor obramowania
-        strokeWidth="2" // Grubość obramowania
+        className="w-6 h-6 text-white arrow-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
