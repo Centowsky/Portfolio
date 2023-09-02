@@ -15,7 +15,7 @@ export default function NavbarHeader() {
     { text: "Strona główna", link: "/" },
     { text: "O mnie", link: "/about" },
     { text: "Projekty", link: "/projects" },
-    { text: "Kontakt", link: "#contact" },
+    { text: "Kontakt", link: "/contact" },
   ];
 
   const toggleNavbar = () => {
