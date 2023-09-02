@@ -58,7 +58,7 @@ export default function About(): JSX.Element {
           responsywnych stron WWW. Poniżej znajdują się umiejętności, które
           dotychczas najbardziej udało mi się rozwinąć:
         </p>
-        <div className="grid grid-cols-2 gap-4 mb-8">
+        <div className="grid grid-cols-2 gap-4 mb-8 px-4">
           {["Frontend", "Pozostałe"].map((category) => (
             <div key={category}>{renderSkillsByCategory(category)}</div>
           ))}
