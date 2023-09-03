@@ -66,7 +66,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white">
+    <footer className="bg-slate-800 text-white">
       <div className="container mx-auto px-4 py-8 md:flex md:justify-center">
         {/* <div className="flex space-x-4 md:w-1/2">
           <ContactForm />
@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="text-center py-4 bg-gray-900">
+      <div className="text-center py-4">
         <p className="text-gray-400 text-sm">
           &copy; {new Date().getFullYear()} Centowsky - Wszelkie prawa
           zastrzeżone

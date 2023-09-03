@@ -25,7 +25,7 @@ export default function About(): JSX.Element {
   ): JSX.Element => (
     <div className="mb-2">
       <span>{skill}</span>
-      <div className="bg-gray-600 h-2 rounded-full overflow-hidden">
+      <div className="bg-teal-300 h-2 rounded-full overflow-hidden">
         <div
           className="bg-gradient-to-r from-amber-500 to-amber-600 h-full"
           style={{ width: `${level}%` }}
@@ -48,7 +48,7 @@ export default function About(): JSX.Element {
   );
 
   return (
-    <section className="bg-gray-700 h-screen flex flex-col justify-center items-center relative text-white z-0">
+    <section className="bg-slate-800  h-screen flex flex-col justify-center items-center relative text-white z-0">
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-6xl font-bold mb-8 tracking-tight">O mnie</h1>
         <p className="text-xl leading-8 mb-8 px-4">
