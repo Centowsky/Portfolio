@@ -1,3 +1,5 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import NavbarHeader from "./components/NavbarHeader";
@@ -5,6 +7,8 @@ import ScrollDownButton from "./components/ScrollDownButton";
 
 import Page from "./pages/Page";
 import "./styles/App.scss";
+
+AOS.init({ duration: 1000 });
 
 function App() {
   return (

@@ -1,6 +1,5 @@
-import React from "react";
-import Home from "./Home";
 import About from "./About";
+import Home from "./Home";
 import Projects from "./Projects";
 
 export default function Page() {

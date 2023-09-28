@@ -3,7 +3,11 @@ import React from "react";
 export default function Home(): JSX.Element {
   return (
     <section className="bg-gray-900 h-screen flex flex-col justify-center items-center relative text-white z-0">
-      <div className="max-w-3xl mx-auto text-center">
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="200"
+        className="max-w-3xl mx-auto text-center"
+      >
         <h1 className="text-6xl font-bold mb-8 tracking-tight">
           Frontend Developer
         </h1>
