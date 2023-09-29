@@ -51,12 +51,16 @@ export default function About(): JSX.Element {
     <section className="bg-slate-800  h-screen flex flex-col justify-center items-center relative text-white z-0">
       <div className="max-w-3xl mx-auto text-center">
         <h1
-          data-aos="fade-left"
+          data-aos="zoom-in-left"
           className="text-6xl font-bold mb-8 tracking-tight"
         >
           O mnie
         </h1>
-        <p data-aos="fade-right" className="text-xl leading-8 mb-8 px-4">
+        <p
+          data-aos="fade-right"
+          data-aos-delay="500"
+          className="text-xl leading-8 mb-8 px-4"
+        >
           Jestem studentem trzeciego roku informatyki i pasjonatem tworzenia
           stron internetowych. Moje umiejętności w tej dziedzinie stale się
           rozwijają, a moim celem jest tworzenie estetycznych, interaktywnych i
@@ -64,7 +68,7 @@ export default function About(): JSX.Element {
           dotychczas najbardziej udało mi się rozwinąć:
         </p>
         <div
-          data-aos="fade-up"
+          data-aos="fade-left"
           data-aos-delay="1000"
           className="grid grid-cols-2 gap-4 mb-8 px-4"
         >
@@ -73,7 +77,8 @@ export default function About(): JSX.Element {
           ))}
         </div>
         <button
-          data-aos="zoom-in"
+          data-aos="zoom-out-up"
+          data-aos-delay="1000"
           className="mt-8 bg-gradient-to-r from-amber-500 to-amber-600 text-white py-3 px-6 rounded-full transition duration-500 hover:shadow-lg"
         >
           Zobacz moje projekty
