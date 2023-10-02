@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import NavbarHeader from "./components/NavbarHeader";
 import ScrollDownButton from "./components/ScrollDownButton";
+import ErrorPage from "./pages/NotFound";
 
 import Page from "./pages/Page";
 import "./styles/App.scss";
@@ -15,13 +16,9 @@ function App() {
     <div className="App">
       <NavbarHeader />
       <Routes>
+        <Route index element={<Page />} />
         <Route path="/" element={<Page />} />
-        <Route path="/portfolio" element={<Page />} />
-        <Route path="*" element={<Page />} />
-        {/* <Route path="/home" element={<Page />} /> */}
-        {/* <Route path="about" element={<About />} />
-        <Route path="projects" element={<Projects />} />
-        <Route path="contact" element={<Contact />} /> */}
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
       <ScrollDownButton />
