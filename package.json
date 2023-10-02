@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://centowsky.github.io/portfolio",
+  "homepage": "https://centowsky.github.io/home",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.16",
