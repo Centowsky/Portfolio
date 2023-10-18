@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import NavbarHeader from "./components/NavbarHeader";
 import ScrollDownButton from "./components/ScrollDownButton";
 import ErrorPage from "./pages/NotFound";
+import CV from "./pages/CV";
 
 import Page from "./pages/Page";
 import "./styles/App.scss";
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route index element={<Page />} />
         <Route path="/" element={<Page />} />
+        <Route path="/cv" element={<CV />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
